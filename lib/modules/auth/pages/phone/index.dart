@@ -26,6 +26,7 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
 
   final isLoading = false.obs;
   final error = ''.obs;
+  final accepted = false.obs;
 
   @override
   void initState() {
@@ -35,6 +36,7 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: GestureDetector(
         behavior: HitTestBehavior.translucent,
@@ -79,6 +81,23 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
                   ),
                 ),
               ),
+              Text("Please read and accept our terms before continuing:"),
+              SizedBox(
+                width: Get.width,
+                child: ListTile(
+                  leading: Obx(
+                    () => Checkbox(
+                      activeColor: theme.colorScheme.secondary,
+                      value: accepted(),
+                      onChanged: (v) => accepted(v),
+                    ),
+                  ),
+                  title: Text(
+                    t.AcceptTerms,
+                  ),
+                  onTap: () => launchURL(appConfigs.termsURL),
+                ),
+              ),
             ],
           ),
         ),
@@ -89,6 +108,10 @@ class _PhoneLoginPageState extends State<PhoneLoginPage> {
   Future<void> getValidationCode() async {
     if (!phoneNumber.isPhoneNumber) {
       BotToast.showText(text: t.InvalidPhone);
+      return;
+    }
+    if (!accepted()) {
+      BotToast.showText(text: t.AcceptTerms);
       return;
     }
     isLoading(true);
