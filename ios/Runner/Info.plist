@@ -35,7 +35,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<string>ca-app-pub-5844030808838740~6167600717</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -51,15 +51,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App needs access to camera to share pictures in profile and chat</string>
+	<string>The App needs access to camera to share pictures which the users post while in accordance with the EULA terms accepted during sign up. It is also used to change user's profile picture and share pictures while chatting with other users. Other than that, it is used in no other ways.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>App needs access to contacts so you can contact them</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Sending a voice message to your contacts</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Storing downloaded photos</string>
+	<string>Storing the downloaded photos that were posted or sent by other users in the app</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App needs access to share your photos in profile and contacts</string>
+	<string>App needs access to share your photos in profile and contacts in accordance with the EULA terms accepted during sign up. This allows users to post their iamges from the library into the app feed and update their profile picture. Other than that, it is used in no other ways</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>App needs access to share media with users.</string>
 	<key>NSUserTrackingUsageDescription</key>
